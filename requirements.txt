@@ -1,5 +1,6 @@
 python-dotenv
 langchain
+langchain_openai
 openai
 huggingface_hub
 google-generativeai
