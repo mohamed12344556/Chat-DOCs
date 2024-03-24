@@ -12,13 +12,6 @@ from langchain_openai import OpenAIEmbeddings
 import requests
 import os
 
-# import docx2txt
-
-
-# def get_word_text(word_file):
-#     text = docx2txt.process(word_file)
-#     return text
-
 
 def get_pdf_text(pdf_file):
     pdf_reader = PdfReader(pdf_file)
@@ -104,15 +97,6 @@ def main():
                         st.session_state.conversation = get_conversation_chain(
                             vectorstore
                         )
-
-        # elif file_type == "Word":
-        #     word_file = st.file_uploader("Upload Word file", type=["docx"])
-        #     if word_file is not None:
-        #         with st.spinner("Processing..."):
-        #             raw_text = get_word_text(word_file)
-        #              text_chunks = get_text_chunks(raw_text)
-        #              vectorstore = get_vectorstore(text_chunks)
-        #              st.session_state.conversation = get_conversation_chain(vectorstore)
 
         elif file_type == "URL":
             url = st.text_input("Enter URL")
